@@ -12,7 +12,7 @@ class WordController extends Controller
     private $with = ['definitions'];
 
     public function index() {
-        $words = Word::inRandomOrder()->inRandomOrder()->limit(100)->get();
+        $words = Word::inRandomOrder()->limit(100)->get();
         return WordResource::collection($words->load($this->with));
     }
 }
